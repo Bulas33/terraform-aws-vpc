@@ -167,6 +167,7 @@ resource "aws_route_table_association" "private" {
     
 }
 
+
 resource "aws_route_table_association" "database" {
    count = length(var.database_subnets_cidr)
    subnet_id = element(aws_subnet.database[*].id, count.index)
